@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import products from "../../../db/database.json";
-const listProducts=require("../../../db/database.json")
+
 
 export default function handle(requisao:NextApiRequest,resposonse:NextApiResponse){
        const {id}=requisao.query
