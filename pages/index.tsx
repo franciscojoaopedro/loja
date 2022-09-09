@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <>
     <Head>
-      <title>Njila Ai Tech J&F</title>
+      <title>Kandengue Tech</title>
       <meta name='descriptio' content='Njila Ai Tech' />
       <link rel="stylesheet" href="/public/favicon.ico" />
     </Head>
