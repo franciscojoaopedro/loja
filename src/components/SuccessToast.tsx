@@ -8,7 +8,7 @@ const SuccessToast=(props:{
 })=>{
     return(
     <Toast
-    className="bg-sucess text-white fixed-bottom ms-auto me-4 mb-4"
+    className="bg-success text-white fixed-bottom ms-auto me-4 mb-4"
     isOpen={props.toastIsOpen}
     fade
     >
