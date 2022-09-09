@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Header from '../src/components/Header';
 
 
 const Home: NextPage = () => {
@@ -10,6 +11,7 @@ const Home: NextPage = () => {
       <meta name='descriptio' content='Njila Ai Tech' />
       <link rel="stylesheet" href="/public/favicon.ico" />
     </Head>
+    <Header/>
 
     <main>
       <h1>Seja bem vindo <a href="">Njila Ai Tech</a></h1>
