@@ -1,4 +1,4 @@
-import {GetServerSideProps, NextPage} from "next"
+import {GetServerSideProps, GetStaticProps, NextPage} from "next"
 import {ReactNode, useEffect, useState } from "react"
 import { Container, Row ,Col} from "reactstrap";
 
@@ -7,20 +7,20 @@ interface ApiReference{
     timestamp:Date
 }
 
-export const getServerSideProps: GetServerSideProps= async ()=>{
-    const serverSideData: ApiReference = await fetch(`${process.env.NEXT_PUBLIC_APIURL}/api/hello`).then(resposnse=>resposnse.json())
-    
+export const getStaticProps: GetStaticProps=  async()=>{
+    const staticsData= await fetch (`${process.env.NEXT_PUBLIC_APIURL}/api/hello`)
+    .then(res=>res.json())
     return{
         props:{
-            serverSideData
-            
+            staticsData
         }
     }
 }
 
-const Dynamic:NextPage=(props:{
+
+const Static:NextPage=(props:{
     children?:ReactNode
-    serverSideData?:ApiReference
+    staticsData?:ApiReference
 })=>{
     
     const [clienteSideDate,setClientSideData]=useState<ApiReference>()
@@ -39,12 +39,15 @@ const Dynamic:NextPage=(props:{
             <h1 className="my-5">
                 Como funcionam as renderizações do Next.JS
             </h1>
+            
             <Row>
                 <Col>
                     <h3>
-                        Gerado no Servidor:
+                        Gerado no estaticamente:
                     </h3>
-                    <h2>{props.serverSideData?.timestamp.toString()}</h2>
+                    <h2>
+                {props.staticsData?.timestamp.toString()}
+            </h2>
                 </Col>
                 <Col>
                     <h3>
@@ -56,4 +59,4 @@ const Dynamic:NextPage=(props:{
         </Container>
     )
 }
-export default Dynamic;
+export default Static;
