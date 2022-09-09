@@ -11,12 +11,12 @@ const Header=()=>{
             </a>
             </Link>
             <Nav className="flex-row" navbar>
-                <Link href="/products">
+                <Link href="/products" passHref>
                     <a className="nav-link me-2">
                         Produtos
                     </a>
                 </Link>
-                <Link href="/cart">
+                <Link href="/cart" passHref>
                     <a className="nav-link me-2">
                         Carrinho
                     </a>
